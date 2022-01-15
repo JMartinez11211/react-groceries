@@ -22,15 +22,13 @@ class Form extends Component {
     event.preventDefault();
     this.props.getData(this.state);
     this.setState({
-			item: "",
-			units: "",
-			quantity: 0,
-			isPurchased: false
-		});
+      item: "",
+      units: "",
+      quantity: 0,
+      isPurchased: false,
+    });
     console.log(this.state);
   };
-
-  
 
   render() {
     return (
@@ -59,7 +57,7 @@ class Form extends Component {
             value={this.state.quantity}
             onChange={this.handleChange}
           />
-           <button >Submit</button>
+          <button>Submit</button>
         </div>
       </form>
     );

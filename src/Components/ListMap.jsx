@@ -7,13 +7,13 @@ class ListMap extends Component {
       <div id="cardContainer">
         {this.props.data1.list.map((data, index) => {
           return (
-          !data.isPurchased &&(
-            <List
-              data={data}
-              changeBoolean={this.props.changeBoolean}
-              key={index}
-            />
-          )
+            !data.isPurchased && (
+              <List
+                data={data}
+                changeBoolean={this.props.changeBoolean}
+                key={index}
+              />
+            )
           );
         })}
       </div>

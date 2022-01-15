@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -37,7 +36,7 @@
     transform: rotate(360deg);
   }
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,5 +49,4 @@ form{
 #cardonatainer {
   display: grid;
   grid-template-areas: "1 1 1 1 1 1 1";
-  
 }

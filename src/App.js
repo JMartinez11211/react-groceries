@@ -15,17 +15,17 @@ class App extends React.Component {
     this.setState({ list: [...this.state.list, post] });
   };
 
-  changeBoolean = (isPurchased) =>{
-    this.setState((prevpost)=> {
-      return{
-        list: prevpost.list.map((list)=>{
+  changeBoolean = (isPurchased) => {
+    this.setState((prevpost) => {
+      return {
+        list: prevpost.list.map((list) => {
           return list.isPurchased == isPurchased
-          ? {...list, isPurchased: !list.isPurchased}
-          : list;
-        })
-      }
+            ? { ...list, isPurchased: !list.isPurchased }
+            : list;
+        }),
+      };
     });
-  }
+  };
 
   render() {
     return (

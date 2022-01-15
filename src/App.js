@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import "./App.css";
+import React from "react";
+import Form from "./Components/Form";
+import ListMap from "./Components/ListMap";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      list: [],
+    };
+  }
+  getData = (post) => {
+    this.setState({ list: [...this.state.list, post] });
+  };
+
+  changeBoolean = (isPurchased) =>{
+    this.setState((prevpost)=> {
+      return{
+        list: prevpost.list.map((list)=>{
+          return list.isPurchased == isPurchased
+          ? {...list, isPurchased: !list.isPurchased}
+          : list;
+        })
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Form x={this.state} getData={this.getData} />
+        <ListMap data1={this.state} changeBoolean={this.changeBoolean} />
+      </div>
+    );
+  }
 }
 
 export default App;

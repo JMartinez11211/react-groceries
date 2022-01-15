@@ -49,6 +49,6 @@ form{
 
 #cardonatainer {
   display: grid;
-  
+  grid-template-areas: "1 1 1 1 1 1 1";
   
 }
